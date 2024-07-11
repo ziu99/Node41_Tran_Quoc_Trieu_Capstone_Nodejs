@@ -1,0 +1,80 @@
+1.Table of Contents
+  -Getting Started
+  -Prerequisites
+  -Installation
+  -Running the Application
+  -API Documentation
+  -Routes
+  -Environment Variables
+  -License
+
+2.Getting Started
+   These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+3.Prerequisites
+    Before you begin, ensure you have met the following requirements:
+        -Node.js and npm installed. You can download them from Node.js
+        -MongoDB installed and running. You can download it from MongoDB
+
+4.Installation
+    4.1:Clone the repository:
+        git clone https://github.com/ziu99/Node41_Tran_Quoc_Trieu_Capstone_Nodejs.git
+    4.2:Install dependencies:
+        npm install
+
+5.Running the Application
+    5.1:Create a '.env' file in the root of the project and add the following environment variables:
+        MONGODB_URI=your_mongodb_uri
+        PORT=3000
+    5.2:Start the application:
+        npm start
+
+     The server should now be running on http://localhost:3000.
+
+6.API Documentation
+    API documentation is available via Swagger. Once the server is running, navigate to http://localhost:3000/api-docs to view the documentation.
+
+7.Routes
+    7.1:Auth Routes
+        POST /api/auth/register: Register a new user
+        POST /api/auth/login: Login a user
+    7.2:Booking Routes
+        GET /api/bookings: Get all bookings
+        GET /api/bookings/:id: Get booking by ID
+        POST /api/bookings: Create a new booking
+        PUT /api/bookings/:id: Update booking by ID
+        DELETE /api/bookings/:id: Delete booking by ID
+    7.3:Comment Routes
+        GET /api/comments: Get all comments
+        GET /api/comments/:id: Get comment by ID
+        POST /api/comments: Create a new comment
+        PUT /api/comments/:id: Update comment by ID
+        DELETE /api/comments/:id: Delete comment by ID
+    7.4:Listing Routes
+        GET /api/listings: Get all listings
+        GET /api/listings/:id: Get listing by ID
+        POST /api/listings: Create a new listing
+        PUT /api/listings/:id: Update listing by ID
+        DELETE /api/listings/:id: Delete listing by ID
+    7.5:Location Routes
+        GET /api/locations: Get all locations
+        GET /api/locations/:id: Get location by ID
+        POST /api/locations: Create a new location
+        PUT /api/locations/:id: Update location by ID
+        DELETE /api/locations/:id: Delete location by ID
+    7.6:User Routes
+        POST /api/users/register: Register a new user
+        POST /api/users/login: Login a user
+        GET /api/users/profile: Get user profile
+        PUT /api/users/profile: Update user profile
+        DELETE /api/users/profile: Delete user profile
+
+8.Environment Variables
+    The application requires the following environment variables to be set:
+        -MONGODB_URI: The connection string for your MongoDB database
+        -PORT: The port on which the server will run (default: 3000)
+
+
+Happy coding!
+
+

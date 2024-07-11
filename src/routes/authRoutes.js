@@ -1,17 +1,17 @@
 const express = require('express');
+const { register, login } = require('../controllers/authController');
 const router = express.Router();
-const authController = require('../controllers/authController');
 
 /**
  * @swagger
  * tags:
  *   name: Auth
- *   description: Authentication and registration
+ *   description: Authentication endpoints
  */
 
 /**
  * @swagger
- * /auth/register:
+ * /register:
  *   post:
  *     summary: Register a new user
  *     tags: [Auth]
@@ -37,19 +37,27 @@ const authController = require('../controllers/authController');
  *                 type: string
  *               role:
  *                 type: string
+ *             example:
+ *               name: John Doe
+ *               email: johndoe@example.com
+ *               password: password123
+ *               phone: '123456789'
+ *               birth_day: '1990-01-01'
+ *               gender: male
+ *               role: user
  *     responses:
  *       201:
  *         description: User created successfully
  *       500:
- *         description: Internal server error
+ *         description: Server error
  */
-router.post('/register', authController.register);
+router.post('/register', register);
 
 /**
  * @swagger
- * /auth/login:
+ * /login:
  *   post:
- *     summary: Log in a user
+ *     summary: Login a user
  *     tags: [Auth]
  *     requestBody:
  *       required: true
@@ -62,16 +70,19 @@ router.post('/register', authController.register);
  *                 type: string
  *               password:
  *                 type: string
+ *             example:
+ *               email: johndoe@example.com
+ *               password: password123
  *     responses:
  *       200:
  *         description: User logged in successfully
- *       404:
- *         description: User not found
  *       400:
  *         description: Invalid credentials
+ *       404:
+ *         description: User not found
  *       500:
- *         description: Internal server error
+ *         description: Server error
  */
-router.post('/login', authController.login);
+router.post('/login', login);
 
 module.exports = router;

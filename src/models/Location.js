@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const LocationSchema = new mongoose.Schema({
-  ten_vi_tri: String,
-  tinh_thanh: String,
-  quoc_gia: String,
-  hinh_anh: String,
+  ten_vi_tri: { type: String, required: true },
+  tinh_thanh: { type: String, required: true },
+  quoc_gia: { type: String, required: true },
+  hinh_anh: { type: String, required: true },
 });
 
 module.exports = mongoose.model('Location', LocationSchema);
